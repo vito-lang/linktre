@@ -1,0 +1,215 @@
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #1E1E1E;
+    }
+    ul{
+        display: flex;
+        list-style: none; 
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        background-color: #373737;
+        padding: 0px;
+        font-family: "Montserrat", sans-serif ;
+        font-size: 0.9em;
+    }
+    nav a{
+        display: flex;
+        color: white;
+        text-decoration: none; 
+        transition: color 0.2s ease;
+        padding: 15px 80px;
+    }
+    nav a:hover{
+        background-color:#1E1E1E;
+    }
+    section{
+        display: flex;   
+        color: white;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+    }
+    section h1{
+        font-size: 2rem;
+        margin: 20px;
+    }
+    .post li{
+        list-style-type: none;
+    }
+    .post a{
+        text-decoration: none;
+    }
+    footer{
+        color: white;
+        background: #373737 ;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+h2{
+   font-family: "Montserrat", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+   text-align: center;
+}
+p{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #2E2E2E;
+    border-radius: 10px;
+    box-shadow: #5E5366 15px 15px 20px;
+}
+img{
+    border-radius: 20px;
+    height: 250px;
+}
+.al{
+    color: white ;
+}
+p{
+    max-width: 80%;
+}
+.img1{
+    background-image: url(istockphoto-1167847906-612x612.jpg);
+    height: 185px;
+    background-size: contain;
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button1{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+button{
+    margin-top: 22px;
+}
+.contacto{
+    font-family: "Exo 2", sans-serif;
+    color: white;
+    font-size: 0.9em;
+}
+.contacto1{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center ;
+    color: white;
+    font-size: 2em;
+}
+.div2{
+    background-color: #2E2E2E;
+    border-radius: 12px;
+    padding: 32px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: #5E5366 15px 15px 20px;
+}
+input {
+    width: 80%;
+    height: 25px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px; 
+}
+ button {
+    font-family: "Exo 2", sans-serif ;
+    background-color: #5C6F80;
+    color: white; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+ button:hover {
+    background-color: #4A5B6B;
+}
+.intro{
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.intro h2 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2em; 
+    margin-bottom: 20px;
+    color: #FFF; 
+}
+.intro p {
+    text-align: center;
+    font-size: 1.1em; 
+    margin-bottom: 15px;
+    color: #E0E0E0; 
+    max-width: 90%;
+}
+@media (max-width: 600px){
+    ul{
+        flex-direction: column;
+        padding: 0;
+    }
+    nav a {
+        padding: 15px 0;
+        justify-content: center;
+    }
+    li{
+        margin: 0;
+        text-align: center;
+    }
+    section{
+        flex-direction: column;
+        align-items: center;
+    }
+    article{
+        width: 90%;
+        margin: 15px 0;
+        padding: 12px;
+    }
+    img{
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    .div2 {
+        padding: 16px;
+        max-width: 98%;
+    }
+    .intro {
+        padding: 10px;
+        max-width: 98%;
+    }
+    .intro h2 {
+        font-size: 1.3em;
+    }
+    .intro p {
+        font-size: 1em;
+    }
+}

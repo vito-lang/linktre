@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+  
+</body>
+</html>
+<div class="calculadora">
+    <input type="text" id="display" disabled placeholder="0" />
+    <div class="botones">
+      <button onclick="agregarNumero('7')">7</button>
+      <button onclick="agregarNumero('8')">8</button>
+      <button onclick="agregarNumero('9')">9</button>
+      <button class="operador" onclick="agregarOperador('/')">÷</button>
+
+      <button onclick="agregarNumero('4')">4</button>
+      <button onclick="agregarNumero('5')">5</button>
+      <button onclick="agregarNumero('6')">6</button>
+      <button class="operador" onclick="agregarOperador('*')">×</button>
+
+      <button onclick="agregarNumero('1')">1</button>
+      <button onclick="agregarNumero('2')">2</button>
+      <button onclick="agregarNumero('3')">3</button>
+      <button class="operador" onclick="agregarOperador('-')">−</button>
+
+      <button onclick="agregarNumero('0')">0</button>
+      <button onclick="agregarNumero('.')">.</button>
+      <button class="clear" onclick="limpiar()">C</button>
+      <button class="operador" onclick="agregarOperador('+')">+</button>
+
+      <button style="grid-column: span 4;" onclick="calcular()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    let operacion = '';
+
+    function agregarNumero(num) {
+      // Evitar múltiples puntos
+      if (num === '.' && operacion.slice(-1) === '.') return;
+      operacion += num;
+      actualizarDisplay();
+    }
+
+    function agregarOperador(op) {
+      if (operacion === '') return; // No agregar operador al inicio
+      const ultimoChar = operacion.slice(-1);
+      // Evitar dos operadores seguidos
+      if ('+-*/'.includes(ultimoChar)) {
+        operacion = operacion.slice(0, -1) + op;
+      } else {
+        operacion += op;
+      }
+      actualizarDisplay();
+    }
+
+    function limpiar() {
+      operacion = '';
+      actualizarDisplay();
+    }
+
+    function actualizarDisplay() {
+      display.value = operacion || '0';
+    }
+
+    function calcular() {
+      if (operacion === '') return;
+      try {
+        // Usar eval con precaución, aquí es simple y controlado
+        let resultado = eval(operacion);
+        if (resultado === Infinity || resultado === -Infinity) {
+          resultado = 'Error: División por cero';
+        }
+        operacion = resultado.toString();
+        actualizarDisplay();
+      } catch (e) {
+        operacion = '';
+        display.value = 'Error en la operación';
+      }
+    }
+  </script>
